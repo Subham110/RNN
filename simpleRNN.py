@@ -40,7 +40,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 # 2. Build RNN Model
 model = Sequential([
     Embedding(input_dim=1000, output_dim=16, input_length=max_len),
-    LSTM(32, return_sequences=False),  # You can replace with SimpleRNN or GRU
+    SimpleRNN(32, return_sequences=False),
     Dense(16, activation='relu'),
     Dense(1, activation='sigmoid')  
 ])
